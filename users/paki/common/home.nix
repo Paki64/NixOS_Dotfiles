@@ -42,6 +42,7 @@
       hyprshot                # Screenshot
       killall                 # System Utility 
       libnotify               # Notification test
+      networkmanagerapplet    # Network Manager GUI
       pavucontrol             # Gestione audio
       playerctl               # Media inputs
       swaynotificationcenter  # Centro notifiche
