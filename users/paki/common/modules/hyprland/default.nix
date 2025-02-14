@@ -30,10 +30,10 @@
       # Puoi configurare anche combo di flag, ovviamente
       #Keyboard binders
       bind = [
+        "$mod, B, exec, firefox"                      # Apri il browser
 	      "$mod, C, exec, hyprctl dispatch killactive"  # Chiudi la finestra attiva
         "$mod, D, exec, vesktop"                      # Avvia discord
         "$mod, E, exec, nautilus"                     # Apri il file explorer
-        "$mod, F, exec, firefox"                      # Apri il browser
 	      "$mod, Q, exec, alacritty"                    # Apri il terminale
         "$mod, S, exec, spotify"                      # Apri Spotify
         "$mod, T, exec, telegram-desktop"             # Apri Telegram
@@ -48,6 +48,9 @@
         # Tasti media
         ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
         ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
+
+        "$mod, F, togglefloating"                     # Imposta finestra come fluttuante
+        "$mod2, F, centerwindow"                      # Centra la finestra fluttuante
 
         "$mod, Tab, cyclenext"                        # change focus to another window
         "$mod, Tab, bringactivetotop"                 # bring it to the top (floating window)
