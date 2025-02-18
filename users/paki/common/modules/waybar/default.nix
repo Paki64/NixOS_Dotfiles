@@ -51,10 +51,11 @@ with lib;
         };
         "clock" = {
           timezone = "Europe/Rome";
+          locale = "it_IT.UTF-8";
           format = if clock24h == true then '' {:L%H:%M}'' else '' {:L%I:%M %p}'';
           tooltip = true;
-          tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
-        };
+          tooltip-format = "<big>{:L%A %d %B %Y}</big>";
+          };
         "hyprland/window" = {
           max-length = 22;
           separate-outputs = false;
@@ -181,7 +182,7 @@ with lib;
             "󰂂"
             "󰁹"
           ];
-          on-click = "";
+          #on-click = "";
           tooltip = false;
         };
       }
