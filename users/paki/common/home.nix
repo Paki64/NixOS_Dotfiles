@@ -64,6 +64,7 @@
       discord-canary          # Client Discord Vanilla (funziona lo screenshare) 
       fastfetch               # System Info
       ffmpeg                  # Multimedia encoder
+      moonlight-qt            # Remote Client
       nitch                   # NixOS info
       obs-studio              # OBS
       okular                  # Visualizzatore Documenti

@@ -34,6 +34,7 @@
 	      "$mod, C, exec, hyprctl dispatch killactive"  # Chiudi la finestra attiva
         "$mod, D, exec, vesktop"                      # Avvia discord
         "$mod, E, exec, nautilus"                     # Apri il file explorer
+	      "$mod, M, exec, moonlight"                    # Apri Moonlight
 	      "$mod, Q, exec, alacritty"                    # Apri il terminale
         "$mod, S, exec, spotify"                      # Apri Spotify
         "$mod, T, exec, telegram-desktop"             # Apri Telegram
