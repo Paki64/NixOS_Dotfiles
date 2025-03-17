@@ -20,7 +20,7 @@
     ./modules/wlogout       # Logout
     # Servizi
     ./services/rclone.nix   # Rclone
-    ./services/syncthing.nix# Syncthing
+    #./services/syncthing.nix# Syncthing
   ];
 
   # Informazioni sull'utente
