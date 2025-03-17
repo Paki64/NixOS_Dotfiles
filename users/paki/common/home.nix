@@ -18,8 +18,9 @@
     ./modules/swaync        # Notification Manager
     ./modules/waybar        # Status Bar
     ./modules/wlogout       # Logout
-    # Servizi Systemd
+    # Servizi
     ./services/rclone.nix   # Rclone
+    ./services/syncthing.nix# Syncthing
   ];
 
   # Informazioni sull'utente
@@ -43,6 +44,7 @@
       killall                 # System Utility 
       libnotify               # Notification test
       networkmanagerapplet    # Network Manager GUI
+      obsidian                # Obsidian
       pavucontrol             # Gestione audio
       playerctl               # Media inputs
       swaynotificationcenter  # Centro notifiche
@@ -75,7 +77,6 @@
       tree                    # File utility
       vesktop                 # Discord
       vscode-fhs              # VSCode (versione con integrazioni per Nix)
-
     ];
 
     # Gestione dotfiles tramite symlink

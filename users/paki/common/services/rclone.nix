@@ -10,7 +10,7 @@
     };
     Service = {
       Type = "notify";
-      ExecStart = "${pkgs.rclone}/bin/rclone --config=%h/.nixos/dots/common/rclone/rclone.conf --vfs-cache-mode writes --ignore-checksum mount \"Paki:\" \"Onedrive\" --volname Onedrive";
+      ExecStart = "${pkgs.rclone}/bin/rclone --config=%h/.nixos/dots/common/rclone/rclone.conf --vfs-cache-mode full --ignore-checksum mount \"Paki:\" \"Onedrive\" --volname Onedrive --vfs-cache-max-size 10G";
       ExecStop="/bin/fusermount -u %h/Onedrive/%i";
       Restart = "always";
       RestartSec = 30;

@@ -35,6 +35,11 @@ in
     };
   };
 
+  # X11 Server
+  services.xserver = {
+    enable = true;
+  };
+
   networking = {
     networkmanager.enable = true;       # Enable networking
     hostName = mkDefault "paki-nixos";  # Default hostname    
@@ -85,20 +90,25 @@ in
   programs.ssh.startAgent = true;
   # Enable hyprland composer
   programs.hyprland.enable = mkDefault true;
+  programs.hyprland.xwayland.enable = mkDefault true;
   programs.hyprlock.enable = mkDefault true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+    # Programmi di base
     alacritty               # Terminal
     cachix                  # Cache per pacchetti Nix
-    firefox                 # Browser
+    boxbuddy                # GUI per Distrobox
+    distrobox               # Wrapper per altre distro
+    docker-compose          # Docker Compose module
+    librewolf               # Browser
     git                     # Git
     killall                 # System Utility 
     twingate                # Zero-Trust Tunnel
     waybar                  # Status Bar
     wget                    # Downloader
-
   ];
 
   # Default theme
@@ -108,7 +118,10 @@ in
 
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   # Variabili d'ambiente
   environment.sessionVariables = {
