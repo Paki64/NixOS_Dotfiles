@@ -6,13 +6,14 @@
 
     networkmanager.enable = true; # Enable networking
     hostName = "Paki-Server01";   # Define your hostname.
+    nameservers = [ "1.1.1.1" "192.168.1.101" ];
     # wireless.enable = true;     # Enables wireless support via wpa_supplicant.
 
     interfaces.enp2s0 = {
       useDHCP = false;
       ipv4.addresses = [{
 	address = "192.168.1.101";
-	prefixLenght = 24;
+	prefixLength = 24;
       }];
     };
 
