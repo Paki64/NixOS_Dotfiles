@@ -27,7 +27,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-
     # Spicetify
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -41,6 +40,8 @@
       };
 
     };
+
+
 
   # I sistemi configurati, si inizia importando le librerie
   outputs = { self,
@@ -61,18 +62,28 @@
 
       # Configurazioni dei Sistemi
       nixosConfigurations = {
-        paki-laptop = lib.nixosSystem {
+
+        Paki-Laptop = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ 
             ./hosts/laptop/configuration.nix
             stylix.nixosModules.stylix
           ];
         };
+
+        Paki-Server01 = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ 
+            ./hosts/server01/configuration.nix
+          ];
+        };
+
       };
+
 
       # Configurazioni degli Utenti
       homeConfigurations = {
-        "paki@paki-laptop" = home-manager.lib.homeManagerConfiguration {
+        "paki@Paki-Laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           modules = [
             ./users/paki/common/home.nix
@@ -96,5 +107,6 @@
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
   };
+
 
 }

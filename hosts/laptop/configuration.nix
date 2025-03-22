@@ -14,7 +14,7 @@
       ../common/users/paki
     ];
 
-  networking.hostName = "paki-laptop"; # Define your hostname.
+  networking.hostName = "Paki-Laptop"; # Define your hostname.
   
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = false;
