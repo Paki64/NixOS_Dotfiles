@@ -9,6 +9,7 @@
       ./network.nix
       ./programs.nix
       ./virtualization.nix
+      ./services
     ];
 
   # Bootloader.
