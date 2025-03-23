@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-    imports = [
 
-    ];
+  imports = [
+    ./rclone.nix
+  ];
+
 }
