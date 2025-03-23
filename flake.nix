@@ -37,7 +37,11 @@
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
-      };
+    };
+
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";  
+    };
 
     };
 
@@ -52,6 +56,7 @@
               hyprlock,
               spicetify-nix, 
               stylix,
+	      vscode-server,
               ... 
             }@inputs:
 
@@ -75,6 +80,10 @@
           system = "x86_64-linux";
           modules = [ 
             ./hosts/server/configuration.nix
+	    vscode-server.nixosModules.default
+            ({ config, pkgs, ... }: {
+              services.vscode-server.enable = true;
+            })
           ];
         };
 
