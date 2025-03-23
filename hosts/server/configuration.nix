@@ -1,17 +1,14 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./network.nix
-      ../common/global/locale.nix
+    [ ../common/global/locale.nix
       ../common/global/nix.nix
       ../common/users/paki
+      ./hardware-configuration.nix
+      ./network.nix
+      ./programs.nix
+      ./virtualization.nix
     ];
 
   # Bootloader.
@@ -23,21 +20,6 @@
     rtkit.enable = true;
     sudo.extraConfig = "Defaults pwfeedback";
   };
-
-  # Virtualization / Containers
-  virtualisation.libvirtd.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    gh
-    git
-    wget
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

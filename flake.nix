@@ -8,13 +8,13 @@
     # Nixpkgs (non richiede di dichiarare github)
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
-      };
+    };
 
     # Home-Manager
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
-      };
+    };
 
     # Hyprland
     hyprland = {
@@ -39,12 +39,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # VSCode Server: per abilitare l'accesso remoto
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";  
     };
 
-    };
-
+  };
 
 
   # I sistemi configurati, si inizia importando le librerie
@@ -56,7 +56,7 @@
               hyprlock,
               spicetify-nix, 
               stylix,
-	      vscode-server,
+      	      vscode-server,
               ... 
             }@inputs:
 
@@ -80,9 +80,10 @@
           system = "x86_64-linux";
           modules = [ 
             ./hosts/server/configuration.nix
-	    vscode-server.nixosModules.default
+	          vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
               services.vscode-server.enable = true;
+              services.vscode-server.enableFHS = true;
             })
           ];
         };
