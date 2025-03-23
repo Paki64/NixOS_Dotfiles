@@ -71,10 +71,10 @@
           ];
         };
 
-        Paki-Server01 = lib.nixosSystem {
+        Paki-Server = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ 
-            ./hosts/server01/configuration.nix
+            ./hosts/server/configuration.nix
           ];
         };
 
