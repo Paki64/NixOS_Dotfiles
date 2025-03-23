@@ -3,7 +3,7 @@
 {
 
   imports = [
-    #./rclone.nix
+    ./rclone.nix
   ];
 
 }
