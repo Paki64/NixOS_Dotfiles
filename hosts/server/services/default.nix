@@ -4,6 +4,8 @@
 
   imports = [
     ./rclone.nix
+
+    ./jellyfin.nix
   ];
 
 }
