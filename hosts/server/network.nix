@@ -11,8 +11,8 @@
     interfaces.enp2s0 = {
       useDHCP = false;
       ipv4.addresses = [{
-	address = "192.168.1.101";
-	prefixLength = 24;
+	      address = "192.168.1.101";
+	      prefixLength = 24;
       }];
     };
 	
@@ -32,7 +32,17 @@
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 10202 ];
+    settings = {
+      PasswordAuthentication = false;
+      # AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+      UseDns = true;
+      X11Forwarding = false;
+      PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
+  };
 
   # Enable Tailscale
   services.tailscale.enable = true;
