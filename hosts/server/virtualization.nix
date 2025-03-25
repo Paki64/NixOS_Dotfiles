@@ -3,9 +3,10 @@
 {
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
-  virtualisation.podman = {
+  virtualisation.docker = {
     enable = true;
-    dockerCompat = true;
+    autoPrune.enable = true;
   };
-
+  virtualisation.oci-containers.backend = "docker";
+  
 }
