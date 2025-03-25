@@ -5,6 +5,11 @@
   # Tutte le fonti (git repos)
   inputs = {
 
+    # Agenix
+    agenix = {
+      url = "github:ryantm/agenix";
+    };
+
     # Nixpkgs (non richiede di dichiarare github)
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
@@ -25,11 +30,6 @@
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
-    };
-
-    # Sops-nix: Crittografia dei secrets
-    sops-nix = {
-      url = "github:Mic92/sops-nix"; 
     };
 
     # Spicetify
@@ -55,11 +55,11 @@
   # I sistemi configurati, si inizia importando le librerie
   outputs = { self,
               nixpkgs, 
+              agenix,
               home-manager, 
               hyprland,
               hyprland-plugins,
               hyprlock,
-              sops-nix,
               spicetify-nix, 
               stylix,
       	      vscode-server,
@@ -86,9 +86,10 @@
           system = "x86_64-linux";
           modules = [ 
             ./hosts/server/configuration.nix
-            sops-nix.nixosModules.sops
+            agenix.nixosModules.default
 	          vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
+              environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
               services.vscode-server.enable = true;
               services.vscode-server.enableFHS = true;
             })

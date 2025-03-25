@@ -1,0 +1,13 @@
+# Secrets
+
+let
+  server = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDKQgzAy/kzsEdkNeeRQ6SOInlkJdBATQ0EfzKnTJYwZ8ruU+5nIHJwCAWbdoYTZsAsn0FlVptJ3OaV9mmrDPpyNS3r4BAd4d6DJXmMuqcfIWiyV881qZqdlse9T6mygmw5+Mxo+pgY/w/ehUoPHARHQcVCfs9ljBUdXOW1I7DSs5HETD5GN10tuNWZoFVMvlUR5ohB9O0ZOk0nhoJ1C5ueLs4z/3PBvwAYo184v1w7W0dlqMcsdH0d1PbOGHZeaFI3bnqUWJFnPR3gPZlxgLgKFwGQYTf3i9/qvWhIjEJcMS39Rgj709MXz6Y5JR9KOMT1L6FzDejELZaQNC/C3ope5uCraoEIemoQPoaTCRzcix8/FrQH1jj8sKCHZXgeuC76741L0duu1a2LNC+hcT2Okqcya64k3wx9Vg/Qg93DKeKsss4/OiFAWuc2JlsdqNWwPLdxbrFVLZw+u4v+JlCKbGKBVleFHxK62h2ScvZooxeks56TDMUOMzgWS98PbV4Xicko5NtX+IdvG9QMNQnQswy52JbME4iNUC7DXjx2WOQHQSm6kCXVhkV1tDve73e1oUVJcoLqys/dZ8i2VqXhgvK2o7hwtdxtLedOwPw2A614U+s7OExTckJHLl2MRToUbauRWiaggm1m0d0JSBTx+iYDyILdAcqOh/izjHnGfw== paki@Paki-Server";
+  laptop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7UiS5tGXHKWRs+NgeSaEenxk6RvumlZ/rpGACksBGX paki@Paki-Laptop";
+  desktop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINSqAaM2Yjcqu3Lk9Jxq0EATc+FY3So2Sk6icUm3GD4X paki@Paki-Desktop";
+  
+  common = [server laptop desktop];
+in {
+
+  "cloudflare..".publicKeys = server;
+
+}
