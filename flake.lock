@@ -808,6 +808,22 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1742578646,
+        "narHash": "sha256-GiQ40ndXRnmmbDZvuv762vS+gew1uDpFwOfgJ8tLiEs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "94c4dbe77c0740ebba36c173672ca15a7926c993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1682134069,
         "narHash": "sha256-TnI/ZXSmRxQDt2sjRYK/8j8iha4B4zP2cnQCZZ3vp7k=",
         "owner": "NixOS",
@@ -873,9 +889,28 @@
         "hyprland-plugins": "hyprland-plugins",
         "hyprlock": "hyprlock",
         "nixpkgs": "nixpkgs_2",
+        "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
         "vscode-server": "vscode-server"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1742700801,
+        "narHash": "sha256-ZGlpUDsuBdeZeTNgoMv+aw0ByXT2J3wkYw9kJwkAS4M=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "67566fe68a8bed2a7b1175fdfb0697ed22ae8852",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "spicetify-nix": {
@@ -1118,7 +1153,7 @@
     "vscode-server": {
       "inputs": {
         "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1729422940,

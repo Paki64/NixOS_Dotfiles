@@ -45,18 +45,18 @@
     };
   };
 
-  services.ddns-updater = {
+  /*services.ddns-updater = {
     enable = true;
     environment = {
       provider = "cloudflare";
       zone_identifier = "some id";
       domain = "pakisrv.com";
       ttl = "600";
-      token = "${CLOUDFLARE_TOKEN}";
+      token = "${CF_API_KEY}";
       ip_version = "ipv4";
       ipv6_suffix = "";      
     };
-  };
+  };*/
 
   # Tailscale VPN
   services.tailscale.enable = true;

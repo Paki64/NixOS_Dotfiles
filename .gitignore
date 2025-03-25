@@ -4,4 +4,4 @@ dots/common/rclone/rclone.conf
 */dots/common/rclone/rclone.conf
 >>>>>>> Stashed changes
 
-hosts/server/.env
+hosts/server/enviroment.nix

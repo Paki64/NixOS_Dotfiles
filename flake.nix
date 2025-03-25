@@ -27,6 +27,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # Sops-nix: Crittografia dei secrets
+    sops-nix = {
+      url = "github:Mic92/sops-nix"; 
+    };
+
     # Spicetify
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -54,6 +59,7 @@
               hyprland,
               hyprland-plugins,
               hyprlock,
+              sops-nix,
               spicetify-nix, 
               stylix,
       	      vscode-server,
@@ -80,6 +86,7 @@
           system = "x86_64-linux";
           modules = [ 
             ./hosts/server/configuration.nix
+            sops-nix.nixosModules.sops
 	          vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
               services.vscode-server.enable = true;
