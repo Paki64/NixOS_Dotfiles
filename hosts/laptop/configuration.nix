@@ -3,14 +3,11 @@
 {
   imports =
     [ 
-      # Configurazioni specifiche
       ./hardware-configuration.nix
       ./network.nix
-      # Configurazioni generali
-      ../common/global
-      # Configurazione Stylix
       ./stylix
-      # Configurazioni utenti
+      ./secrets.nix
+      ../common/global
       ../common/users/paki
     ];
 

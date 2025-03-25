@@ -8,6 +8,7 @@ in
     [ 
       ./locale.nix
       ./nix.nix
+      ./secrets.nix
       ../stylix
     ];
 

@@ -8,6 +8,7 @@
       ./hardware-configuration.nix
       ./network.nix
       ./programs.nix
+      ./secrets.nix
       ./virtualization.nix
       ./services
     ];
