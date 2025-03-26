@@ -3,7 +3,6 @@
 {
   imports =
     [ 
-      ./programs  # Programs
-      ./services  # Services
+      ./git   # Git
     ];
 }

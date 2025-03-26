@@ -5,21 +5,16 @@
   imports =
     [ ./hardware-configuration.nix  # Hardware specific configuration
       ./network.nix                 # Network settings
+      ./secrets.nix                 # Secrets
       ./users.nix                   # User settings
-      ../../modules                 # Services
+      ../../modules                 # Programs & Services
     ];
 
-  # Systemd Bootloader.
+  system.stateVersion = "24.11"; # Original NixOS installation release
+
+  # Systemd Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # System profile applications
-  environment.systemPackages = with pkgs; [
-    gh
-    git
-    sops
-    wget
-  ];
 
   # Security settings
   security = {
@@ -35,6 +30,11 @@
   };
   virtualisation.oci-containers.backend = "docker";
 
-  system.stateVersion = "24.11"; # Original NixOS installation release
+  # System profile applications
+  environment.systemPackages = with pkgs; [
+    wget
+  ];
+
+  # NixOS Modules ...
 
 }

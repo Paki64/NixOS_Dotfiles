@@ -17,6 +17,7 @@
           "networkmanager"
           "wheel"
         ];
+        password = "$(cat ${config.sops.secrets."common/system/userPassword".path})";
         #shell = pkgs.zsh;
         #hashedPasswordFile = passwordFile;
       };
