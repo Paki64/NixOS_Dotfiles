@@ -6,7 +6,7 @@
     [ ./hardware-configuration.nix  # Hardware specific configuration
       ./network.nix                 # Network settings
       ./users.nix                   # User settings
-      ../modules                    # Services
+      ../../modules                 # Services
     ];
 
   # Systemd Bootloader.
