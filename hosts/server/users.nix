@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, config, ... }:
 #let
 # passwordFile = config.sops.secrets.sys-passphrase.path;
 #in
@@ -13,6 +9,7 @@
       paki = {
         isNormalUser = true;
         description = "Pasquale Criscuolo";
+        linger = true; #Enable lingering for services after logout
         extraGroups = [
           "docker"
           "libvirtd"

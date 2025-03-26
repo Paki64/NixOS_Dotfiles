@@ -1,70 +1,31 @@
 {
-  # Descrizione testuale
-  description = "Flakes di configurazione";
+  description = "System flakes";
 
-  # Tutte le fonti (git repos)
+  # Inputs
   inputs = {
 
-    # Agenix
-    agenix = {
-      url = "github:ryantm/agenix";
-    };
-
-    # Nixpkgs (non richiede di dichiarare github)
+    # Nixpkgs repos
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
     };
 
-    # Home-Manager
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
+    # Sops: 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprlock.url = "github:hyprwm/hyprlock";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    # Spicetify
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Stylix: gestore dichiarativa dei dotfiles
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # VSCode Server: per abilitare l'accesso remoto
+    # VSCode Server: remote ssh access for vscode
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";  
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
 
 
   # I sistemi configurati, si inizia importando le librerie
-  outputs = { self,
-              nixpkgs, 
-              agenix,
-              home-manager, 
-              hyprland,
-              hyprland-plugins,
-              hyprlock,
-              spicetify-nix, 
-              stylix,
-      	      vscode-server,
-              ... 
-            }@inputs:
+  outputs = { self, nixpkgs, sops-nix, vscode-server, ... }@inputs:
 
     # Import delle funzioni
     let
@@ -74,22 +35,13 @@
       # Configurazioni dei Sistemi
       nixosConfigurations = {
 
-        Paki-Laptop = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ 
-            ./hosts/laptop/configuration.nix
-            stylix.nixosModules.stylix
-          ];
-        };
-
         Paki-Server = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ 
             ./hosts/server/configuration.nix
-            agenix.nixosModules.default
+            sops-nix.nixosModules.sops
 	          vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
-              environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
               services.vscode-server.enable = true;
               services.vscode-server.enableFHS = true;
             })
@@ -97,22 +49,6 @@
         };
 
       };
-
-
-      # Configurazioni degli Utenti
-      homeConfigurations = {
-        "paki@Paki-Laptop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          modules = [
-            ./users/paki/common/home.nix
-            ./users/paki/laptop/home.nix
-            stylix.homeManagerModules.stylix
-          ];
-          extraSpecialArgs = { inherit inputs; };
-        };
-        
-      };
-
     };
 
   nixConfig = {

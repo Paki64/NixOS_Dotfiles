@@ -45,19 +45,6 @@
     };
   };
 
-  services.ddns-updater = {
-    enable = true;
-    environment = {
-      provider = "cloudflare";
-      zone_identifier = "some id";
-      domain = "asa";
-      ttl = "600";
-      token = "AAAAAAAAA";
-      ip_version = "ipv4";
-      ipv6_suffix = "";      
-    };
-  };
-
   # Tailscale VPN
   services.tailscale.enable = true;
 
