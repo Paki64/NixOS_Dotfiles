@@ -5,3 +5,7 @@ creation_rules:
     key_groups:
     - age:
       - *server
+  - path_regex: secrets/rclone\.conf\.sops$
+    key_groups:
+      - age:
+          - *server

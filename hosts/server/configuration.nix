@@ -5,9 +5,9 @@
   imports =
     [ ./hardware-configuration.nix  # Hardware specific configuration
       ./network.nix                 # Network settings
-      ./secrets.nix                 # Secrets
       ./users.nix                   # User settings
       ../../modules                 # Programs & Services
+      ../../secrets                 # Secrets
     ];
 
   system.stateVersion = "24.11"; # Original NixOS installation release
@@ -32,10 +32,17 @@
 
   # System profile applications
   environment.systemPackages = with pkgs; [
-    wget
+    wget  # wget
   ];
 
-  # NixOS Modules ...
-  git.enable = true;
+  # Modules
+
+  git.enable = true;  # Enables Git and Github CLI
+  
+  # Enable rclone and Server mount
+  rclone = {          
+    enable = true;
+    server.enable = true;
+  };
 
 }
