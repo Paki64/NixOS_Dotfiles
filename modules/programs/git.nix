@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 
@@ -7,15 +7,18 @@
       lib.mkEnableOption "enables git";
   };
 
-  environment.systemPackages = lib.mkIf config.git.enable [
-    pkgs.git   # Git
-    pkgs.gh    # Github CLI
-  ];
+  config = lib.mkIf config.git.enable {
+    
+    environment.systemPackages = with pkgs; [
+      git   # Git
+      gh    # Github CLI
+    ];
 
-  programs.git = lib.mkIf config.git.enable {
-    enable = true;
-    lfs.enable = true;
-    userName = "Paki64";
-    userEmail = "pasqualecriscuolo2010@gmail.com";
+    programs.git = {
+      enable = true;
+      lfs.enable = true;
+    };
+
   };
+
 }

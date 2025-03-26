@@ -36,5 +36,6 @@
   ];
 
   # NixOS Modules ...
+  git.enable = true;
 
 }
