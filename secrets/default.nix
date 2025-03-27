@@ -9,8 +9,9 @@
 
   sops.secrets = {
 
-    "common/system/userPassword" = {};
-    "common/rclone" = {
+    "hosts/server/users/paki/password" = {};
+
+    "modules/services/rclone/conf" = {
       sopsFile = ./rclone.conf.sops;
       format = "binary";
       path = "/home/paki/.config/rclone/rclone.conf";
