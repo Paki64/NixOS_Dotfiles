@@ -13,7 +13,8 @@
     "common/rclone" = {
       sopsFile = ./rclone.conf.sops;
       format = "binary";
-      path = "/etc/rclone-mnt.conf";
+      path = "/home/paki/.config/rclone/rclone.conf";
+      owner = "paki";
     };
 
   };
