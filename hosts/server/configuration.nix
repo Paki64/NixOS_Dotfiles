@@ -35,14 +35,21 @@
     wget  # wget
   ];
 
-  # Modules
+  # Custom Modules
+  modules = {
 
-  git.enable = true;  # Enables Git and Github CLI
-  
-  # Enable rclone and Server mount
-  rclone = {          
-    enable = true;
-    server.enable = true;
+    programs = {
+      git.enable = true;              # Enables Git and Github CLI (gh)
+    };
+
+    services = {
+
+      rclone = {          
+        enable = true;                # Enables Rclone
+        server.enable = true;         # Enables Server mount
+      };
+
+    };
   };
 
 }

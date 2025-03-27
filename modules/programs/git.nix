@@ -3,11 +3,11 @@
 {
 
   options = {
-    git.enable = 
+    modules.programs.git.enable = 
       lib.mkEnableOption "enables git";
   };
 
-  config = lib.mkIf config.git.enable {
+  config = lib.mkIf config.modules.programs.git.enable {
     
     environment.systemPackages = with pkgs; [
       git   # Git
