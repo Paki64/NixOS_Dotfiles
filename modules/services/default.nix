@@ -3,6 +3,7 @@
 {
   imports =
     [ 
-      ./rclone   # Git
+      ./network   # Network related services
+      ./rclone    # Rclone services
     ];
 }
