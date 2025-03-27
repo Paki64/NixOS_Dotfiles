@@ -39,17 +39,16 @@
   modules = {
 
     programs = {
-      git.enable = true;              # Enables Git and Github CLI (gh)
+      git.enable = true;              # Enables Git and Github CLI (gh), includes LFS support
     };
 
     services = {
-
       rclone = {          
         enable = true;                # Enables Rclone
         server.enable = true;         # Enables Server mount
       };
-
     };
+    
   };
 
 }

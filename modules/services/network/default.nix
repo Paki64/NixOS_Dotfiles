@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      #./cloudflare-ddns.nix   # DDNS Update for Cloudflare
+      ./ddns.nix   # DDNS Updater for Cloudflare
     ];
 
 }
