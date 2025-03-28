@@ -47,6 +47,9 @@
     };
 
     services = {
+      media = {
+        jellyfin.enable = true;       # Enables Jellyfin media server
+      };
       network = {
         ddns.enable = true;           # Enables DDNS Auto-Update
       };
