@@ -17,7 +17,6 @@
           "networkmanager"
           "wheel"
         ];
-        password = "$(cat ${config.sops.secrets."hosts/server/users/paki/password".path})";
         #shell = pkgs.zsh;
         #hashedPasswordFile = passwordFile;
       };

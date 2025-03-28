@@ -30,9 +30,13 @@
   };
   virtualisation.oci-containers.backend = "docker";
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # System profile applications
   environment.systemPackages = with pkgs; [
-    wget  # wget
+    compose2nix   # Utility for Compose conversion to nix files
+    wget          # wget
   ];
 
   # Custom Modules
@@ -43,6 +47,9 @@
     };
 
     services = {
+      network = {
+        ddns.enable = true;           # Enables DDNS Auto-Update
+      };
       rclone = {          
         enable = true;                # Enables Rclone
         server.enable = true;         # Enables Server mount

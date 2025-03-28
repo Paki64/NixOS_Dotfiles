@@ -5,7 +5,12 @@ creation_rules:
     key_groups:
     - age:
       - *server
-  - path_regex: secrets/rclone\.conf\.sops$
+  # Dotfiles
+  - path_regex: secrets/dots/ddns\.sops$
     key_groups:
-      - age:
-          - *server
+    - age:
+      - *server  
+  - path_regex: secrets/dots/rclone\.sops$
+    key_groups:
+    - age:
+      - *server

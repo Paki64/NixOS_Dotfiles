@@ -3,6 +3,7 @@
 {
   imports =
     [ 
+      ./nix       # Nix Settings
       ./programs  # Programs
       ./services  # Services
     ];

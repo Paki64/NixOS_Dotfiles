@@ -3,7 +3,7 @@
 let 
   mountDrive = "Server:";
   mountPath = "/mnt/rclone";
-  configFile = "/home/paki/.config/rclone/rclone.conf";
+  configFile = "/etc/rclone-mnt.conf";
   logFile = "/tmp/rclone/rclone-server.log";
   cacheDir = "/tmp/rclone/cache";
 in {
@@ -20,6 +20,7 @@ in {
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
       wantedBy = [ "multi-user.target" ];
+      restartIfChanged = false;
       serviceConfig = {
         Type = "notify";
         ExecPreStart = "/bin/fusermount -u /mnt/rclone";

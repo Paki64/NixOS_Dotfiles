@@ -9,13 +9,19 @@
 
   sops.secrets = {
 
+    # From secrets.yaml
     "hosts/server/users/paki/password" = {};
 
-    "modules/services/rclone/conf" = {
-      sopsFile = ./rclone.conf.sops;
+    # Dotfiles 
+    "dots/ddns" = {
+      sopsFile = ./dots/ddns.sops;
       format = "binary";
-      path = "/home/paki/.config/rclone/rclone.conf";
-      owner = "paki";
+      path = "/etc/ddns/data/config.json";
+    };
+    "dots/rclone" = {
+      sopsFile = ./dots/rclone.sops;
+      format = "binary";
+      path = "/etc/rclone-mnt.conf";
     };
 
   };
