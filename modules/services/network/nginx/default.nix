@@ -21,7 +21,7 @@
       
       (lib.mkIf (! config.modules.services.network.nginx.enable) {
         modules.services.network.nginx = {
-          jellyfin.enable = lib.mkForce false;
+          #jellyfin.enable = lib.mkForce false;
         };
       })
     
