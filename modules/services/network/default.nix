@@ -4,7 +4,6 @@
   imports =
     [ 
       ./ddns.nix    # DDNS Updater for Cloudflare
-      ./nginx       # Reverse Proxy
       ./traefik     # Reverse Proxy
     ];
 
