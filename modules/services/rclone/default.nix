@@ -2,10 +2,9 @@
 
 {
   imports =
-    [ 
-      ./server.nix   # Rclone Server (UnionFS)
-    ];
-
+  [ 
+    ./server.nix   # Rclone Server (UnionFS)
+  ];
 
   options = {
     modules.services.rclone.enable = 

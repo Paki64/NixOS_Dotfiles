@@ -52,6 +52,10 @@
       };
       network = {
         ddns.enable = true;           # Enables DDNS Auto-Update
+        nginx = {
+          enable = true;              # Enables Nginx Reverse Proxy
+          jellyfin.enable = true;     # jellyfin.pakisrv.com
+        };
       };
       rclone = {          
         enable = true;                # Enables Rclone
