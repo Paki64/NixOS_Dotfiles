@@ -2,7 +2,7 @@
 
 {
   options = {
-    modules.services.network.ddns.enable = 
+    modules.services.media.jellyfin.enable = 
       lib.mkEnableOption "enables jellyfin media server";
   };
 
