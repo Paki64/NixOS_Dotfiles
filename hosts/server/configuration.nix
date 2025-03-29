@@ -52,6 +52,7 @@
       };
       network = {
         ddns.enable = true;           # Enables DDNS Auto-Update
+        traefik.enable = true;        # Enables Traefik Reverse Proxy
       };
       rclone = {          
         enable = true;                # Enables Rclone

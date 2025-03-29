@@ -9,12 +9,14 @@
 
   # Config file in secrets/dots/ddclient.sops
   config = lib.mkIf config.modules.services.network.ddns.enable {
+
     systemd.tmpfiles.rules = [
     ];
     services.ddclient = {
       enable = true;
       configFile = "/etc/ddclient.conf";
     };
+
   };
 
 }
