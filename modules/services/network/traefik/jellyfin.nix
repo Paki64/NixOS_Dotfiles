@@ -17,11 +17,22 @@
           service = "jellyfin";
           tls.certResolver = "letsencrypt";
         };
+        jellyseerr = {
+          entryPoints = ["websecure"];
+          rule = "Host(`requests.tv.pakisrv.com`)";
+          service = "jellyseerr";
+          tls.certResolver = "letsencrypt";
+        };
       };
       http.services = {
         jellyfin.loadBalancer.servers = [
           {
             url = "http://localhost:8096";
+          }
+        ];
+        jellyseerr.loadBalancer.servers = [
+          {
+            url = "http://localhost:5055";
           }
         ];
       };

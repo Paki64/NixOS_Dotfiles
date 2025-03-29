@@ -98,9 +98,9 @@
         server.enable = true;         # Enables Server mount
       };
     
-      #homepage.enable = true;
-      #qbittorrent.enable = true;
-      #syncthing.enable = true;
+      #homepage.enable = true;         # Enables Homepage dashboard
+      #qbittorrent.enable = true;      # Enables QBittorrent instance
+      #syncthing.enable = true;        # Enable Syncthing Sync utility
     
     };
     
