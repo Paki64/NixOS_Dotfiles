@@ -13,10 +13,11 @@
     "hosts/server/users/paki/password" = {};
 
     # Dotfiles 
-    "dots/ddns" = {
-      sopsFile = ./dots/ddns.sops;
+    "dots/ddclient" = {
+      sopsFile = ./dots/ddclient.sops;
       format = "binary";
-      path = "/etc/ddns/data/config.json";
+      path = "/etc/ddclient.conf";
+      owner = "paki";
     };
     "dots/rclone" = {
       sopsFile = ./dots/rclone.sops;

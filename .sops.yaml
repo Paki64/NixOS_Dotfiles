@@ -6,10 +6,10 @@ creation_rules:
     - age:
       - *server
   # Dotfiles
-  - path_regex: secrets/dots/ddns\.sops$
+  - path_regex: secrets/dots/ddclient\.sops$
     key_groups:
     - age:
-      - *server  
+      - *server 
   - path_regex: secrets/dots/rclone\.sops$
     key_groups:
     - age:

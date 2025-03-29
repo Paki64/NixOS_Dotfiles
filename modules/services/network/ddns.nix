@@ -10,19 +10,13 @@
 
   config = lib.mkIf config.modules.services.network.ddns.enable {
 
-    systemd.services.ddns = {
-      description = "Dynamic DNS updater using ddns-updater";
+    systemd.tmpfiles.rules = [
+    ];
+    services.ddclient = {
       enable = true;
-      after = [ "network-online.target" ];
-      wants = [ "network-online.target" ];
-      wantedBy = [ "multi-user.target" ];
-      restartIfChanged = true;
-      serviceConfig = {
-        WorkingDirectory = "/etc/ddns";
-        ExecStart = "${pkgs.ddns-updater}/bin/ddns-updater";
-        Restart = "on-failure";
-      };
+      configFile = "/etc/ddclient.conf";
     };
+
 
   };
 
