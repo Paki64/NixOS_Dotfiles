@@ -52,7 +52,10 @@
       };
       network = {
         ddns.enable = true;           # Enables DDNS Auto-Update
-        traefik.enable = true;        # Enables Traefik Reverse Proxy
+        traefik = {
+          enable = true;              # Enables Traefik Reverse Proxy
+          jellyfin.enable = true;     # tv.pakisrv.com
+        };
       };
       rclone = {          
         enable = true;                # Enables Rclone

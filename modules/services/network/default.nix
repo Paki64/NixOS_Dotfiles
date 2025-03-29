@@ -6,5 +6,4 @@
       ./ddns.nix    # DDNS Updater for Cloudflare
       ./traefik     # Reverse Proxy
     ];
-
 }

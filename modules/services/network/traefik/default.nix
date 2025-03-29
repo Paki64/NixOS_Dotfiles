@@ -2,6 +2,11 @@
 
 {
 
+  imports =
+    [ 
+      ./jellyfin.nix    # Jellyfin Media Server
+    ];
+
   options = {
     modules.services.network.traefik.enable = 
       lib.mkEnableOption "enables ddns auto-updater";
@@ -50,7 +55,7 @@
     
     })
 
-    (lib.mkIf (! config.modules.services.rclone.enable) {
+    (lib.mkIf (! config.modules.services.network.traefik.enable) {
       modules.services.network.traefik = {
         jellyfin.enable = lib.mkForce false;
       };

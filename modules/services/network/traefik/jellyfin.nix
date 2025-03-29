@@ -13,7 +13,7 @@
       http.routers = {
         jellyfin = {
           entryPoints = ["websecure"];
-          rule = "Host(`jellyfin.pakisrv.com`)";
+          rule = "Host(`tv.pakisrv.com`)";
           service = "jellyfin";
           tls.certResolver = "letsencrypt";
         };
