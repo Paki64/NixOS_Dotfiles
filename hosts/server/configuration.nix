@@ -30,6 +30,25 @@
   };
   virtualisation.oci-containers.backend = "docker";
 
+  # Intel VAAPI & QSV Settings
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  }; 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+      vaapiVdpau
+      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+      # OpenCL support for intel CPUs before 12th gen
+      # see: https://github.com/NixOS/nixpkgs/issues/356535
+      # intel-compute-runtime-legacy1 
+      vpl-gpu-rt # QSV on 11th gen or newer
+      intel-media-sdk # QSV up to 11th gen
+    ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -47,20 +66,42 @@
     };
 
     services = {
+      
+      #managers = {
+        #flaresolverr.enable = true;   # Fixes cloudflare issues with parsers
+        #prowlarr.enale = true;        # Torrent indexer
+        #radarr.enable = true;         # Movies indexer
+        #sonarr.anime.enable = true;   # Anime indexer
+        #sonarr.tv.enable = true;      # Tv Shows indexer
+      #};
+      
       media = {
+        #calibre.enable = true;        # Enables Calibre book server
+        #komga.enable = true;          # Enables Komga comics/manga server
+        #navidrome.enable = true;      # Enables Navidrome music server
         jellyfin.enable = true;       # Enables Jellyfin media server
       };
+
       network = {
         ddns.enable = true;           # Enables DDNS Auto-Update
         traefik = {
           enable = true;              # Enables Traefik Reverse Proxy
-          jellyfin.enable = true;     # tv.pakisrv.com
+          #calibre.enable = true;      # books.pakisrv.com
+          #komga.enable = true;        # comics.pakisrv.com
+          #navidrome.enable = true;    # music.pakisrv.com
+          jellyfin.enable = true;     # tv.pakisrv.com & request.tv.pakisrv.com
         };
       };
+      
       rclone = {          
         enable = true;                # Enables Rclone
         server.enable = true;         # Enables Server mount
       };
+    
+      #homepage.enable = true;
+      #qbittorrent.enable = true;
+      #syncthing.enable = true;
+    
     };
     
   };
