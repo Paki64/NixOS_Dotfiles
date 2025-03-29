@@ -3,6 +3,6 @@
 {
   imports =
     [ 
-      ./jellyfin        # Media server
+      ./jellyfin.nix      # Media server
     ];
 }
