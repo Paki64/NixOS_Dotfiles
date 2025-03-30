@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.modules.services.network.traefik.navidrome.enable {
 
-    services.navidrome.dynamicConfigOptions = {
+    services.traefik.dynamicConfigOptions = {
       http.routers = {
         navidrome = {
           entryPoints = ["websecure"];

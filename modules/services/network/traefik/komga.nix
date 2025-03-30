@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.modules.services.network.traefik.komga.enable {
 
-    services.komga.dynamicConfigOptions = {
+    services.traefik.dynamicConfigOptions = {
       http.routers = {
         komga = {
           entryPoints = ["websecure"];

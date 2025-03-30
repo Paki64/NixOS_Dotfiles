@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.modules.services.network.traefik.calibre.enable {
 
-    services.calibre.dynamicConfigOptions = {
+    services.traefik.dynamicConfigOptions = {
       http.routers = {
         calibre = {
           entryPoints = ["websecure"];
