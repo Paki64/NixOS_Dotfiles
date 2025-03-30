@@ -11,28 +11,12 @@
       syncthing = {
         enable = true;
         user = "paki";
+        group = "users";
+        guiAddress = "0.0.0.0:8384";
         dataDir = "/home/paki/sync";
         configDir = "/home/paki/sync/.config/syncthing";
-        overrideDevices = false;     # overrides any devices added or deleted through the WebUI
-        overrideFolders = false;     # overrides any folders added or deleted through the WebUI
-        settings = {
-          #devices = {
-            #"Paki-SteamDeck" = { id = "$(cat ${config.sops.secrets."modules/services/syncthing/devices/deck".path}"; };
-            #"desktop" = { id = "DEVICE-ID-GOES-HERE"; };
-          #};
-          folders = {
-            "Saves-Emulation" = {
-              path = "/home/paki/sync/emulation";
-              #devices = [ "deck" ];
-            };
-            "Saves-Games" = {
-              path = "/home/paki/sync/games";
-              #devices = [ "deck" ];
-            };
-          };
         };
       };
     }; 
-  };
 
 }

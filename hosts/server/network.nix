@@ -27,10 +27,13 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 
-        80 # HTTP 
-        443 # HTTPS
+        80          # HTTP 
+        443         # HTTPS
+        8384 22000  # Syncthing
       ]; 
-      # allowedUDPPorts = [ ... ];
+      allowedUDPPorts = [ 
+        22000 21027 # Syncthing
+      ];
     };
 
   };
