@@ -3,6 +3,9 @@
 {
   imports =
     [ 
-      ./jellyfin.nix      # Media server
+      ./calibre.nix       # Calibre Book Server
+      ./jellyfin.nix      # Jellyfin Media server
+      ./komga.nix         # Komga Comics Server
+      ./navidrome.nix     # Navidrome Music Server
     ];
 }

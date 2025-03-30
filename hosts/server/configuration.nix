@@ -67,18 +67,18 @@
 
     services = {
       
-      #managers = {
-        #flaresolverr.enable = true;   # Fixes cloudflare issues with parsers
-        #prowlarr.enale = true;        # Torrent indexer
-        #radarr.enable = true;         # Movies indexer
-        #sonarr.anime.enable = true;   # Anime indexer
-        #sonarr.tv.enable = true;      # Tv Shows indexer
-      #};
+      managers = {
+        flaresolverr.enable = true;   # TODO Fixes cloudflare issues with parsers
+        prowlarr.enale = true;        # TODO Torrent indexer
+        radarr.enable = true;         # TODO Movies indexer
+        sonarr.anime.enable = true;   # TODO Anime indexer
+        sonarr.tv.enable = true;      # TODO Tv Shows indexer
+      };
       
       media = {
-        #calibre.enable = true;        # Enables Calibre book server
-        #komga.enable = true;          # Enables Komga comics/manga server
-        #navidrome.enable = true;      # Enables Navidrome music server
+        calibre.enable = true;        # TODO Enables Calibre book server
+        komga.enable = true;          # TODO Enables Komga comics/manga server
+        navidrome.enable = true;      # TODO Enables Navidrome music server
         jellyfin.enable = true;       # Enables Jellyfin media server
       };
 
@@ -86,9 +86,9 @@
         ddns.enable = true;           # Enables DDNS Auto-Update
         traefik = {
           enable = true;              # Enables Traefik Reverse Proxy
-          #calibre.enable = true;      # books.pakisrv.com
-          #komga.enable = true;        # comics.pakisrv.com
-          #navidrome.enable = true;    # music.pakisrv.com
+          calibre.enable = true;      # TODO books.pakisrv.com
+          komga.enable = true;        # TODO comics.pakisrv.com
+          navidrome.enable = true;    # TODO music.pakisrv.com
           jellyfin.enable = true;     # tv.pakisrv.com & request.tv.pakisrv.com
         };
       };
@@ -98,9 +98,9 @@
         server.enable = true;         # Enables Server mount
       };
     
-      #homepage.enable = true;         # Enables Homepage dashboard
-      #qbittorrent.enable = true;      # Enables QBittorrent instance
-      #syncthing.enable = true;        # Enable Syncthing Sync utility
+      homepage.enable = true;         # TODO Enables Homepage dashboard
+      qbittorrent.enable = true;      # TODO Enables QBittorrent instance
+      syncthing.enable = true;        # TODO Enable Syncthing Sync utility
     
     };
     
