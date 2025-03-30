@@ -4,7 +4,10 @@
 
   imports =
     [ 
+      ./calibre.nix     # Calibre Book Server 
       ./jellyfin.nix    # Jellyfin Media Server
+      ./komga.nix       # Komga Comics Server
+      ./navidrome.nix   # Navidrome Music Server
     ];
 
   options = {
@@ -57,7 +60,10 @@
 
     (lib.mkIf (! config.modules.services.network.traefik.enable) {
       modules.services.network.traefik = {
+        calibre.enable = lib.mkForce false;
         jellyfin.enable = lib.mkForce false;
+        komga.enable = lib.mkForce false;
+        navidrome.enable = lib.mkForce false;
       };
     })
 

@@ -4,7 +4,7 @@
 
   options = {
     modules.services.network.traefik.jellyfin.enable = 
-      lib.mkEnableOption "enables ddns auto-updater";
+      lib.mkEnableOption "enables jellyfin domain";
   };
 
   config = lib.mkIf config.modules.services.network.traefik.jellyfin.enable {
