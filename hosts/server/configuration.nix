@@ -69,7 +69,7 @@
       
       managers = {
         flaresolverr.enable = true;   # TODO Fixes cloudflare issues with parsers
-        prowlarr.enale = true;        # TODO Torrent indexer
+        prowlarr.enable = true;       # TODO Torrent indexer
         radarr.enable = true;         # TODO Movies indexer
         sonarr.anime.enable = true;   # TODO Anime indexer
         sonarr.tv.enable = true;      # TODO Tv Shows indexer
