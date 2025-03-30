@@ -100,7 +100,7 @@
     
       homepage.enable = true;         # TODO Enables Homepage dashboard
       qbittorrent.enable = true;      # TODO Enables QBittorrent instance
-      syncthing.enable = true;        # TODO Enable Syncthing Sync utility
+      syncthing.enable = true;        # Enable Syncthing Sync utility
     
     };
     
