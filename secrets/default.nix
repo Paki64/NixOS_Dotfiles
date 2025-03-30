@@ -11,6 +11,7 @@
 
     # From secrets.yaml
     "hosts/server/users/paki/password" = {};
+    "modules/services/syncthing/devices/deck" = {};
 
     # Dotfiles 
     "dots/ddclient" = {
