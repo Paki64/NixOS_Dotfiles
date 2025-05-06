@@ -24,9 +24,10 @@
 
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
-  virtualisation.docker = {
+  virtualisation.podman = {
     enable = true;
-    autoPrune.enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
   };
   virtualisation.oci-containers.backend = "docker";
 
@@ -54,17 +55,19 @@
 
   # System profile applications
   environment.systemPackages = with pkgs; [
-    compose2nix   # Utility for Compose conversion to nix files
-    distrobox     # Distrobox for specific use-cases (not declarative scenarios)
-    firefox       # Browser for specific use-cases (not declarative scenarios)
-    xdg-utils
-    xdg-desktop-portal
-    wget          # wget
+    compose2nix         # Utility for Compose conversion to nix files
+    distrobox           # Distrobox for specific use-cases (not declarative scenarios)
+    firefox             # Browser for specific use-cases (not declarative scenarios)
+    getent
+    podman
+    wget                # wget
+    xdg-utils           # Xdg-utils for specific use-cases
+    xdg-desktop-portal  # Xdg support for gui
   ];
 
   # Desktop Enviroment
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   services.flatpak.enable = true;
 
