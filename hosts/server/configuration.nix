@@ -55,8 +55,37 @@
   # System profile applications
   environment.systemPackages = with pkgs; [
     compose2nix   # Utility for Compose conversion to nix files
+    distrobox     # Distrobox for specific use-cases (not declarative scenarios)
+    firefox       # Browser for specific use-cases (not declarative scenarios)
+    xdg-utils
+    xdg-desktop-portal
     wget          # wget
   ];
+
+  # Desktop Enviroment
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+  services.flatpak.enable = true;
+
+  # RDP Server
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "startplasma-x11";
+  services.xrdp.openFirewall = true;
+
+  # XDG Portal Support
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
+  };
+
+  # Enviromental Variables
+  environment.sessionVariables = {
+    BROWSER = "firefox";
+  };
 
   # Custom Modules
   modules = {
@@ -66,7 +95,6 @@
     };
 
     services = {
-      
       managers = {
         flaresolverr.enable = true;   # TODO Fixes cloudflare issues with parsers
         prowlarr.enable = true;       # TODO Torrent indexer
@@ -95,6 +123,7 @@
       
       rclone = {          
         enable = true;                # Enables Rclone
+        raidrive.enable = true;       # Workaround for Raidrive mounts (Distrobox)
         server.enable = true;         # Enables Server mount
       };
     

@@ -3,6 +3,7 @@
 {
   imports =
   [ 
+    ./raidrive.nix # Workaround for Raidrive (SFTP to Distrobox)
     ./server.nix   # Rclone Server (UnionFS)
   ];
 
@@ -31,6 +32,7 @@
     
     (lib.mkIf (! config.modules.services.rclone.enable) {
       modules.services.rclone = {
+        raidrive.enable = lib.mkForce false;
         server.enable = lib.mkForce false;
       };
     })

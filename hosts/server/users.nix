@@ -12,8 +12,8 @@
         linger = true; #Enable lingering for services after logout
         extraGroups = [
           "docker"
-          "libvirtd"
           "input"
+          "libvirtd"
           "networkmanager"
           "wheel"
         ];
