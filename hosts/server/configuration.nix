@@ -58,8 +58,8 @@
     compose2nix         # Utility for Compose conversion to nix files
     distrobox           # Distrobox for specific use-cases (not declarative scenarios)
     firefox             # Browser for specific use-cases (not declarative scenarios)
-    getent
-    podman
+    getent              # Requirement for services
+    podman              # Requirement for services
     wget                # wget
     xdg-utils           # Xdg-utils for specific use-cases
     xdg-desktop-portal  # Xdg support for gui

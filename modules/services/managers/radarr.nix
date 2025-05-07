@@ -7,7 +7,10 @@
   };
 
   config = lib.mkIf config.modules.services.managers.radarr.enable {
-    #kokokokok
+    services.radarr = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
 }
