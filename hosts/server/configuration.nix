@@ -100,8 +100,8 @@
     services = {
       managers = {
         flaresolverr.enable = true;   # TODO Fixes cloudflare issues with parsers
-        prowlarr.enable = true;       # TODO Torrent indexer
-        radarr.enable = true;         # TODO Movies indexer
+        prowlarr.enable = true;       # Torrent indexer
+        radarr.enable = true;         # Movies indexer
         sonarr.anime.enable = true;   # TODO Anime indexer
         sonarr.tv.enable = true;      # TODO Tv Shows indexer
       };

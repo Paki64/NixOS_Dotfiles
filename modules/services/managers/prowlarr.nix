@@ -7,7 +7,10 @@
   };
 
   config = lib.mkIf config.modules.services.managers.prowlarr.enable {
-    #kokokokok
+    services.prowlarr = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
 }
