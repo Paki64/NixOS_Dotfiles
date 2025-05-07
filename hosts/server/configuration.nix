@@ -26,10 +26,12 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.podman = {
     enable = true;
+    autoPrune.enable = true;
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
-  virtualisation.oci-containers.backend = "docker";
+  virtualisation.oci-containers.backend = "podman";
+  networking.firewall.interfaces."podman+".allowedUDPPorts = [ 53 ];
 
   # Intel VAAPI & QSV Settings
   nixpkgs.config.packageOverrides = pkgs: {
@@ -99,9 +101,9 @@
 
     services = {
       managers = {
-        flaresolverr.enable = true;   # TODO Fixes cloudflare issues with parsers
-        prowlarr.enable = true;       # Torrent indexer
-        radarr.enable = true;         # Movies indexer
+        flaresolverr.enable = true;   # Fixes cloudflare issues with parsers (localhost:8191)
+        prowlarr.enable = true;       # Torrent indexer (localhost:9696)
+        radarr.enable = true;         # Movies indexer (localhost:7878)
         sonarr.anime.enable = true;   # TODO Anime indexer
         sonarr.tv.enable = true;      # TODO Tv Shows indexer
       };
@@ -110,7 +112,7 @@
         calibre.enable = true;        # TODO Enables Calibre book server
         komga.enable = true;          # TODO Enables Komga comics/manga server
         navidrome.enable = true;      # TODO Enables Navidrome music server
-        jellyfin.enable = true;       # Enables Jellyfin media server
+        jellyfin.enable = true;       # Enables Jellyfin media server (Server:  , Jellyseerr: localhost:5055)
       };
 
       network = {
@@ -132,7 +134,7 @@
     
       homepage.enable = true;         # TODO Enables Homepage dashboard
       qbittorrent.enable = true;      # TODO Enables QBittorrent instance
-      syncthing.enable = true;        # Enable Syncthing Sync utility
+      syncthing.enable = true;        # Enable Syncthing Sync utility (localhost:8384)
     
     };
     
