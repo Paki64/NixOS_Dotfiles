@@ -18,7 +18,6 @@
     # VSCode Server: remote ssh access for vscode
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";  
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -42,6 +41,7 @@
             sops-nix.nixosModules.sops
 	          vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
+              programs.nix-ld.enable = true;
               services.vscode-server.enable = true;
             })
           ];
