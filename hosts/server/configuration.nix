@@ -132,7 +132,7 @@
         server.enable = true;         # Enables Server mount
       };
     
-      deluge.enable = true;           # Enables Deluge instance (localhost:9091)
+      deluge.enable = true;           # Enables Deluge instance (localhost:8112)
       homepage.enable = true;         # TODO Enables Homepage dashboard
       syncthing.enable = true;        # Enable Syncthing Sync utility (localhost:8384)
     
