@@ -133,7 +133,7 @@
       };
     
       homepage.enable = true;         # TODO Enables Homepage dashboard
-      qbittorrent.enable = true;      # TODO Enables QBittorrent instance
+      transmission.enable = true;     # TODO Enables Transmission instance
       syncthing.enable = true;        # Enable Syncthing Sync utility (localhost:8384)
     
     };

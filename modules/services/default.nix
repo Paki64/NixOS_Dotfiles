@@ -11,7 +11,7 @@
       
       # Services
       ./homepage.nix      # Homepage Dashboard
-      ./qbittorrent.nix   # Qbittorrent Downloader
+      ./transmission.nix   # Qbittorrent Downloader
       ./syncthing.nix     # Syncthing Sync Manager
     ];
 }
