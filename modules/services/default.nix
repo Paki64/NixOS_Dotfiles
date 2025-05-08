@@ -10,8 +10,8 @@
       ./rclone            # Rclone services
       
       # Services
+      ./deluge.nix        # Deluge Downloader
       ./homepage.nix      # Homepage Dashboard
-      ./transmission.nix   # Qbittorrent Downloader
       ./syncthing.nix     # Syncthing Sync Manager
     ];
 }
