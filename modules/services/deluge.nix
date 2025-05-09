@@ -10,10 +10,15 @@
     services.deluge = {
       enable = true;
       openFirewall = true;
+      dataDir = "/data/deluge";
       web = {
         enable = true;
         openFirewall = true;
       };
+      config = {
+        download_location = "/data/torrents/";
+      };
+
     };
   };
 
