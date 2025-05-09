@@ -10,6 +10,7 @@
     services.radarr = {
       enable = true;
       openFirewall = true;
+      dataDir = "/data/radarr";
     };
   };
 
