@@ -26,7 +26,7 @@ in {
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = "yes";
-        Environment     = "PATH=/run/current-system/sw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin";
+        Environment = "PATH=/run/current-system/sw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin";
         ExecStart = "${pkgs.distrobox}/bin/distrobox enter raidrive";  
       };
     };
@@ -42,7 +42,7 @@ in {
       serviceConfig = {
         Type = "notify";
         ExecPreStart = "/bin/fusermount -u ${mountPath} & rm -rf ${cacheDir}";
-        ExecStart = "${pkgs.rclone}/bin/rclone mount ${mountDrive} ${mountPath} --config=${configFile} --log-level DEBUG --log-file ${logFile} --allow-other";
+        ExecStart = "${pkgs.rclone}/bin/rclone mount ${mountDrive} ${mountPath} --config=${configFile} --log-level DEBUG --log-file ${logFile} --allow-other --vfs-cache-mode writes --multi-thread-streams 4 --multi-thread-cutoff 250M --dir-cache-time 160h --cache-info-age 168h --buffer-size 1G --vfs-read-chunk-size 32M --vfs-read-chunk-size-limit off";
         ExecStop = "/bin/fusermount -u ${mountPath}";
         Restart = "on-failure";
         RestartSec = "10s";
