@@ -21,7 +21,7 @@
       http.services = {
         navidrome.loadBalancer.servers = [
           {
-            #url = "http://localhost:8096";
+            url = "http://localhost:4533";
           }
         ];
       };
