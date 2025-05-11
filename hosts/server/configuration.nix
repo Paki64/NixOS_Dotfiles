@@ -104,10 +104,10 @@
     services = {
 
       managers = {
-        flaresolverr.enable = false;   # Fixes cloudflare issues with parsers (localhost:8191)
-        prowlarr.enable = false;      # Torrent indexer (localhost:9696)
-        radarr.enable = false;        # Movies indexer (localhost:7878)
-        sonarr.enable = false;        # TV Show indexer (localhost:8989)
+        flaresolverr.enable = true;   # Fixes cloudflare issues with parsers (localhost:8191)
+        prowlarr.enable = true;      # Torrent indexer (localhost:9696)
+        radarr.enable = true;        # Movies indexer (localhost:7878)
+        sonarr.enable = true;        # TV Show indexer (localhost:8989)
       };
       
       media = {
