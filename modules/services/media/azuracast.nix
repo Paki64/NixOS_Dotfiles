@@ -21,17 +21,9 @@
         "SHOW_DETAILED_ERRORS" = "false";
       };
       volumes = [
-        "/data/azuracast/web/acme:/var/azuracast/storage/acme:rw"
-        "/data/azuracast/web/backups:/var/azuracast/backups:rw"
-        "/data/azuracast/web/db_data:/var/lib/mysql:rw"
-        "/data/azuracast/web/geolite_install:/var/azuracast/storage/geoip:rw"
-        "/data/azuracast/web/metadata_cache:/var/azuracast/myMusic:rw"
-        "/data/azuracast/web/sftpgo_data:/var/azuracast/storage/sftpgo:rw"
-        "/data/azuracast/web/shoutcast2_install:/var/azuracast/storage/shoutcast2:rw"
-        "/data/azuracast/web/station_data:/var/azuracast/stations:rw"
-        "/data/azuracast/web/stereo_tool_install:/var/azuracast/storage/stereo_tool:rw"
-        "/data/azuracast/web/www_uploads:/var/azuracast/storage/uploads:rw"
-        "/mnt/raidrive/paki/Musica/Soundtracks/Giochi:/var/azuracast/ost/remote"
+        "/home/paki/data/azuracast:/var/azuracast:rw"
+        "/home/paki/media/music:/var/azuracast/ost/remote"
+        "/home/paki/media/radio:/var/azuracast/radio/remote"
       ];
       ports = [
         "880:80/tcp"
