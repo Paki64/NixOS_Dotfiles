@@ -11,6 +11,7 @@
       enable = true;
       openFirewall = true;
       user = "paki";
+      group="users";
       settings = {
         LogLevel = "DEBUG";
         Scanner_Schedule = "@every 24h";
