@@ -10,6 +10,8 @@
     services.deluge = {
       enable = true;
       openFirewall = true;
+      user = "paki";
+      group = "users";
       web = {
         enable = true;
         openFirewall = true;
