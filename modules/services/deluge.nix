@@ -17,7 +17,7 @@
         openFirewall = true;
       };
       config = {
-        download_location = "/home/paki/media/tmp/torrents/";
+        download_location = "/media/tmp/torrents/";
       };
 
     };

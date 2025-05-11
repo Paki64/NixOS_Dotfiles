@@ -11,13 +11,15 @@
       enable = true;
       openFirewall = true;
       user = "paki";
-      group="users";
+      group= "users";
       settings = {
         LogLevel = "DEBUG";
         Scanner_Schedule = "@every 24h";
-        TranscodingCacheSize = "150MiB";
-        MusicFolder = "/home/paki/media/music";
+        TranscodingCacheSize = "500MiB";
+        MusicFolder = "/media/music/ost/";
         EnableSharing = true;
+        DefaultDownsamplingFormat = "aac";
+        ProtectHome = false;
       };
     };
   };
