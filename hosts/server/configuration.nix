@@ -109,6 +109,7 @@
       };
       
       media = {
+        azuracast.enable = true;      # Enables AzuraCast web radio (localhost:)
         calibre.enable = true;        # TODO Enables Calibre book server
         komga.enable = true;          # TODO Enables Komga comics/manga server
         navidrome.enable = true;      # Enables Navidrome music server
@@ -119,6 +120,7 @@
         ddns.enable = true;           # Enables DDNS Auto-Update
         traefik = {
           enable = true;              # Enables Traefik Reverse Proxy
+          azuracast.enable = true;    # radio.pakisrv.com
           calibre.enable = true;      # TODO books.pakisrv.com
           komga.enable = true;        # TODO comics.pakisrv.com
           navidrome.enable = true;    # TODO music.pakisrv.com
