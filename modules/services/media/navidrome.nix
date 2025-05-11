@@ -10,11 +10,13 @@
     services.navidrome = {
       enable = true;
       openFirewall = true;
+      user = "paki";
       settings = {
         LogLevel = "DEBUG";
         Scanner_Schedule = "@every 24h";
         TranscodingCacheSize = "150MiB";
-        MusicFolder = "/home/paki";
+        MusicFolder = "/home/paki/media/music";
+        DataFolder = "/home/paki/data/navidrome";
         EnableSharing = true;
       };
     };
