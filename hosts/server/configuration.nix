@@ -67,10 +67,11 @@
     xdg-desktop-portal  # Xdg support for gui
   ];
 
+/*
   # Desktop Enviroment
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
   services.flatpak.enable = true;
 
   # RDP Server
@@ -91,6 +92,7 @@
   environment.sessionVariables = {
     BROWSER = "firefox";
   };
+*/
 
   # Custom Modules
   modules = {
