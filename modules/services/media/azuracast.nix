@@ -31,7 +31,7 @@
         "/data/azuracast/web/station_data:/var/azuracast/stations:rw"
         "/data/azuracast/web/stereo_tool_install:/var/azuracast/storage/stereo_tool:rw"
         "/data/azuracast/web/www_uploads:/var/azuracast/storage/uploads:rw"
-        "/mnt/raidrive/paki/Musica/Soundtracks/Giochi:/var/azuracast/myMusic/remote"
+        "/mnt/raidrive/paki/Musica/Soundtracks/Giochi:/var/azuracast/ost/remote"
       ];
       ports = [
         "880:80/tcp"
@@ -40,7 +40,7 @@
         "8000:8000/tcp"
         "8005:8005/tcp"
         "8006:8006/tcp"
-        /*"8010:8010/tcp"
+        "8010:8010/tcp"
         "8015:8015/tcp"
         "8016:8016/tcp"
         "8020:8020/tcp"
@@ -49,7 +49,7 @@
         "8030:8030/tcp"
         "8035:8035/tcp"
         "8036:8036/tcp"
-        "8040:8040/tcp"
+        /*"8040:8040/tcp"
         "8045:8045/tcp"
         "8046:8046/tcp"
         "8050:8050/tcp"

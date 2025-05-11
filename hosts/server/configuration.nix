@@ -109,7 +109,7 @@
       };
       
       media = {
-        azuracast.enable = true;      # Enables AzuraCast web radio (localhost:)
+        azuracast.enable = true;      # Enables AzuraCast web radio
         calibre.enable = true;        # TODO Enables Calibre book server
         komga.enable = true;          # TODO Enables Komga comics/manga server
         navidrome.enable = true;      # Enables Navidrome music server

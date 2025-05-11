@@ -14,7 +14,8 @@
         LogLevel = "DEBUG";
         Scanner_Schedule = "@every 24h";
         TranscodingCacheSize = "150MiB";
-        MusicFolder = "/mnt/raidrive/paki/Musica/Soundtracks/Giochi/";
+        MusicFolder = "/home/paki";
+        EnableSharing = true;
       };
     };
   };
