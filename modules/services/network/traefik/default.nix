@@ -4,6 +4,7 @@
 
   imports =
     [ 
+      ./azuracast.nix   # AzuraCast Web Radio
       ./calibre.nix     # Calibre Book Server 
       ./jellyfin.nix    # Jellyfin Media Server
       ./komga.nix       # Komga Comics Server
