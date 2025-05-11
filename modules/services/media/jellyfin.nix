@@ -12,11 +12,15 @@
       enable = true;
       openFirewall = true;
       user="paki";
+      configDir="/home/paki/data/jellyfin/config";
+      dataDir="/home/paki/data/jellyfin/data";
+      logDir="/home/paki/data/jellyfin/log";
     };
 
     services.jellyseerr = {
       enable = true;
       openFirewall = true;
+      configDir="/home/paki/data/jellyseerr";
     };
 
     environment.systemPackages = [
