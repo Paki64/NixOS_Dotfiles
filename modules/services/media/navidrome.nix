@@ -16,7 +16,6 @@
         Scanner_Schedule = "@every 24h";
         TranscodingCacheSize = "150MiB";
         MusicFolder = "/home/paki/media/music";
-        DataFolder = "/home/paki/data/navidrome";
         EnableSharing = true;
       };
     };
