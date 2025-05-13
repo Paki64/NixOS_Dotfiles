@@ -125,6 +125,7 @@
           azuracast.enable = true;    # radio.pakisrv.com
           calibre.enable = true;      # TODO books.pakisrv.com
           komga.enable = true;        # TODO comics.pakisrv.com
+          minecraft.enable = true;    # pazzomc.pakisrv.com
           navidrome.enable = true;    # TODO music.pakisrv.com
           jellyfin.enable = true;     # tv.pakisrv.com & request.tv.pakisrv.com
         };
@@ -136,6 +137,7 @@
         server.enable = true;         # Enables Server mount
       };
     
+      crafty.enable = true;           # Enables Minecraft Server Manager
       deluge.enable = true;           # Enables Deluge instance (localhost:8112)
       homepage.enable = true;         # TODO Enables Homepage dashboard
       syncthing.enable = true;        # Enable Syncthing Sync utility (localhost:8384)

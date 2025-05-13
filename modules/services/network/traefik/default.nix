@@ -8,6 +8,7 @@
       ./calibre.nix     # Calibre Book Server 
       ./jellyfin.nix    # Jellyfin Media Server
       ./komga.nix       # Komga Comics Server
+      ./minecraft.nix   # Minecraft Servers
       ./navidrome.nix   # Navidrome Music Server
     ];
 
@@ -61,9 +62,11 @@
 
     (lib.mkIf (! config.modules.services.network.traefik.enable) {
       modules.services.network.traefik = {
+        azuracast.enable = lib.mkForce false;
         calibre.enable = lib.mkForce false;
         jellyfin.enable = lib.mkForce false;
         komga.enable = lib.mkForce false;
+        minecraft.enable = lib.mkForce false;
         navidrome.enable = lib.mkForce false;
       };
     })
