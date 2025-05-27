@@ -10,11 +10,11 @@
     
     # Firewall Ports
     networking.firewall.allowedTCPPortRanges = [
-      {from = 25565; to = 25600;} 
+      {from = 25600; to = 25700;} 
     ];
 
     # Crafty manager
-    virtualisation.oci-containers.containers."crafty_container" = {
+    virtualisation.oci-containers.containers."crafty" = {
       image = "registry.gitlab.com/crafty-controller/crafty-4:latest";
       environment = {
         "TZ" = "Etc/UTC";
@@ -30,12 +30,12 @@
         "8443:8443/tcp"               # HTTPS WebUI
         "8123:8123/tcp"               # Dynmap
         "19132:19132/udp"             # Bedrock
-        "25500-25600:25500-25600"     # Java
+        "25600-25700:25600-25700"     # Java
       ];
       log-driver = "journald";
       extraOptions = [
         "--network-alias=crafty"
-        "--network=crafty_default"
+        "--network=crafty"
       ];
     };
     systemd.services."podman-crafty" = {
@@ -43,10 +43,10 @@
         Restart = lib.mkOverride 90 "always";
         };
         after = [
-          "podman-network-crafty_default.service"
+          "podman-network-crafty.service"
         ];
         requires = [
-          "podman-network-crafty_default.service"
+          "podman-network-crafty.service"
         ];
         partOf = [
           "podman-compose-crafty-root.target"
@@ -57,15 +57,15 @@
     };
 
     # Networks
-    systemd.services."podman-network-crafty_default" = {
+    systemd.services."podman-network-crafty" = {
       path = [ pkgs.podman ];
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
-        ExecStop = "podman network rm -f crafty_default";
+        ExecStop = "podman network rm -f crafty";
       };
       script = ''
-        podman network inspect crafty_default || podman network create crafty_default
+        podman network inspect crafty || podman network create crafty
       '';
       partOf = [ "podman-compose-crafty-root.target" ];
       wantedBy = [ "podman-compose-crafty-root.target" ];

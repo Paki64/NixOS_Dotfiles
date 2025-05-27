@@ -8,7 +8,6 @@
       ./calibre.nix     # Calibre Book Server 
       ./jellyfin.nix    # Jellyfin Media Server
       ./komga.nix       # Komga Comics Server
-      ./minecraft.nix   # Minecraft Servers
       ./navidrome.nix   # Navidrome Music Server
     ];
 
@@ -53,7 +52,7 @@
 
           api.dashboard = true;
           # Access the Traefik dashboard on <Traefik IP>:8080 of your server
-          # api.insecure = true;
+          api.insecure = true;
         };
 
       };
@@ -66,7 +65,6 @@
         calibre.enable = lib.mkForce false;
         jellyfin.enable = lib.mkForce false;
         komga.enable = lib.mkForce false;
-        minecraft.enable = lib.mkForce false;
         navidrome.enable = lib.mkForce false;
       };
     })
