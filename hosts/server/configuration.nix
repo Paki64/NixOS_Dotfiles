@@ -67,7 +67,7 @@
     xdg-desktop-portal  # Xdg support for gui
   ];
 
-
+  /*
   # Desktop Enviroment
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
@@ -78,7 +78,8 @@
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "startplasma-x11";
   services.xrdp.openFirewall = true;
-
+  */
+/
   # XDG Portal Support
   xdg.portal = {
     enable = true;
