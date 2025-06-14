@@ -20,11 +20,11 @@
         "TZ" = "Etc/UTC";
       };
       volumes = [
-        "/home/paki/data/crafty/backups:/crafty/backups:rw"
-        "/home/paki/data/crafty/logs:/crafty/logs:rw"
-        "/home/paki/data/crafty/servers:/crafty/servers:rw"
-        "/home/paki/data/crafty/app/config:/crafty/app/config:rw"
-        "/home/paki/data/crafty/import:/crafty/import:rw"
+        "/srv/nas/apps/crafty/config/backups:/crafty/backups:rw"
+        "/srv/nas/apps/crafty/config/logs:/crafty/logs:rw"
+        "/srv/nas/apps/crafty/servers:/crafty/servers:rw"
+        "/srv/nas/apps/crafty/config/app/config:/crafty/app/config:rw"
+        "/srv/nas/apps/crafty/config/import:/crafty/import:rw"
       ];
       ports = [
         "8443:8443/tcp"               # HTTPS WebUI

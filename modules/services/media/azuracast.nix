@@ -21,17 +21,17 @@
         "SHOW_DETAILED_ERRORS" = "false";
       };
       volumes = [
-        "/home/paki/data/azuracast/acme:/var/azuracast/storage/acme:rw"
-        "/home/paki/data/azuracast/backups:/var/azuracast/backups:rw"
-        "/home/paki/data/azuracast/db_data:/var/lib/mysql:rw"
-        "/home/paki/data/azuracast/geolite_install:/var/azuracast/storage/geoip:rw"
-        "/home/paki/data/azuracast/metadata_cache:/var/azuracast/myMusic:rw"
-        "/home/paki/data/azuracast/sftpgo_data:/var/azuracast/storage/sftpgo:rw"
-        "/home/paki/data/azuracast/shoutcast2_install:/var/azuracast/storage/shoutcast2:rw"
-        "/home/paki/data/azuracast/station_data:/var/azuracast/stations:rw"
-        "/home/paki/data/azuracast/stereo_tool_install:/var/azuracast/storage/stereo_tool:rw"
-        "/home/paki/data/azuracast/www_uploads:/var/azuracast/storage/uploads:rw"
-        "/media/music:/var/azuracast/music/remote"
+        "/srv/nas/apps/azuracast/config/acme:/var/azuracast/storage/acme:rw"
+        "/srv/nas/apps/azuracast/config/backups:/var/azuracast/backups:rw"
+        "/srv/nas/apps/azuracast/config/db_data:/var/lib/mysql:rw"
+        "/srv/nas/apps/azuracast/config/geolite_install:/var/azuracast/storage/geoip:rw"
+        "/srv/nas/apps/azuracast/config/metadata_cache:/var/azuracast/myMusic:rw"
+        "/srv/nas/apps/azuracast/config/sftpgo_data:/var/azuracast/storage/sftpgo:rw"
+        "/srv/nas/apps/azuracast/config/shoutcast2_install:/var/azuracast/storage/shoutcast2:rw"
+        "/srv/nas/apps/azuracast/stations:/var/azuracast/stations:rw"
+        "/srv/nas/apps/azuracast/config/stereo_tool_install:/var/azuracast/storage/stereo_tool:rw"
+        "/srv/nas/apps/azuracast/config/www_uploads:/var/azuracast/storage/uploads:rw"
+        "/srv/nas/media/music:/var/azuracast/music/remote"
       ];
       ports = [
         "880:80/tcp"

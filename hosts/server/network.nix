@@ -64,14 +64,13 @@
         #"use sendfile" = "yes";
         #"max protocol" = "smb2";
         # note: localhost is the ipv6 localhost ::1
-        #"hosts allow" = "192.168.0. 127.0.0.1 localhost";
-        #"hosts allow" = "0.0.0.0/0"; # No whitelist due to remote tailscale-only connection        
+        #"hosts allow" = "192.168.0. 127.0.0.1 localhost"; # No whitelist due to remote tailscale-only connection        
         #"hosts deny" = "0.0.0.0/0";
         "guest account" = "nobody";
         "map to guest" = "bad user";
       };
       "NAS" = {
-        "path" = "/media";
+        "path" = "/srv/nas";
         "browseable" = "yes";
         "read only" = "no";
         "guest ok" = "no";

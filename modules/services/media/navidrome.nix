@@ -16,7 +16,7 @@
         LogLevel = "DEBUG";
         Scanner_Schedule = "@every 24h";
         TranscodingCacheSize = "500MiB";
-        MusicFolder = "/media/music/ost/";
+        MusicFolder = "/srv/nas/media/music/ost";
         EnableSharing = true;
         DefaultDownsamplingFormat = "aac";
         ProtectHome = false;

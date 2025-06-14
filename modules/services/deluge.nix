@@ -17,7 +17,7 @@
         openFirewall = true;
       };
       config = {
-        download_location = "/media/tmp/torrents/";
+        download_location = "/srv/nas/tmp/torrents/";
       };
 
     };
