@@ -13,8 +13,8 @@
         user = "paki";
         group = "users";
         guiAddress = "0.0.0.0:8384";
-        dataDir = "/home/paki/sync";
-        configDir = "/home/paki/sync/.config/syncthing";
+        dataDir = "/srv/nas/syncthing";
+        configDir = "/srv/nas/apps/syncthing/config";
         };
       };
     }; 

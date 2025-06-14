@@ -69,7 +69,7 @@
         "guest account" = "nobody";
         "map to guest" = "bad user";
       };
-      "NAS" = {
+      "nas" = {
         "path" = "/srv/nas";
         "browseable" = "yes";
         "read only" = "no";
