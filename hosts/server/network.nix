@@ -38,7 +38,7 @@
 
   };
 
-  # Enable the OpenSSH daemon.
+  # Enables the OpenSSH daemon.
   services.openssh = {
     enable = true;
     ports = [ 10202 ];
@@ -49,6 +49,44 @@
       X11Forwarding = false;
       PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
+  };
+
+  # Enables Samba
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "smbnix";
+        "netbios name" = "smbnix";
+        "security" = "user";
+        #"use sendfile" = "yes";
+        #"max protocol" = "smb2";
+        # note: localhost is the ipv6 localhost ::1
+        #"hosts allow" = "192.168.0. 127.0.0.1 localhost";
+        #"hosts allow" = "0.0.0.0/0"; # No whitelist due to remote tailscale-only connection        
+        #"hosts deny" = "0.0.0.0/0";
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+      };
+      "NAS" = {
+        "path" = "/media";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "paki";
+        "force group" = "users";
+      };
+    };
+  };
+
+  # Samba advertisement for Windows
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
   };
 
   # Tailscale VPN

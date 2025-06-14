@@ -57,7 +57,7 @@
         "--log-opt=max-file=5"
         "--log-opt=max-size=1m"
         "--network-alias=web"
-        "--network=azuracast_default"
+        "--network=azuracast"
       ];
     };
     systemd.services."podman-azuracast" = {
@@ -65,10 +65,10 @@
         Restart = lib.mkOverride 90 "always";
       };
       after = [
-        "podman-network-azuracast_default.service"
+        "podman-network-azuracast.service"
       ];
       requires = [
-        "podman-network-azuracast_default.service"
+        "podman-network-azuracast.service"
       ];
       partOf = [
         "podman-compose-azuracast-root.target"
@@ -79,15 +79,15 @@
     };
 
     # Networks
-    systemd.services."podman-network-azuracast_default" = {
+    systemd.services."podman-network-azuracast" = {
       path = [ pkgs.podman ];
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
-        ExecStop = "podman network rm -f azuracast_default";
+        ExecStop = "podman network rm -f azuracast";
       };
       script = ''
-        podman network inspect azuracast_default || podman network create azuracast_default
+        podman network inspect azuracast || podman network create azuracast
       '';
       partOf = [ "podman-compose-azuracast-root.target" ];
       wantedBy = [ "podman-compose-azuracast-root.target" ];
