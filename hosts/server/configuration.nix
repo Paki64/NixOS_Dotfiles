@@ -126,7 +126,7 @@
           azuracast.enable = true;    # radio.pakisrv.com
           calibre.enable = true;      # TODO books.pakisrv.com
           komga.enable = true;        # TODO comics.pakisrv.com
-          navidrome.enable = false;   # music.pakisrv.com
+          navidrome.enable = true;    # music.pakisrv.com
           nextcloud.enable = true;    # cloud.pakisrv.com
           jellyfin.enable = true;     # tv.pakisrv.com & request.tv.pakisrv.com
         };
@@ -141,7 +141,7 @@
       crafty.enable = true;           # Enables Minecraft Server Manager (https://localhost:8443)
       deluge.enable = true;           # Enables Deluge instance (localhost:8112)
       homepage.enable = true;         # TODO Enables Homepage dashboard
-      nextcloud.enable = false;       # Enables Nextcloud
+      nextcloud.enable = true;        # Enables Nextcloud
       syncthing.enable = true;        # Enables Syncthing Sync utility (localhost:8384)
     
     };
