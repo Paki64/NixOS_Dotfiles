@@ -139,7 +139,8 @@
       crafty.enable = true;           # Enables Minecraft Server Manager (https://localhost:8443)
       deluge.enable = true;           # Enables Deluge instance (localhost:8112)
       homepage.enable = true;         # TODO Enables Homepage dashboard
-      syncthing.enable = true;        # Enable Syncthing Sync utility (localhost:8384)
+      nextcloud.enable = true;        # Enables Nextcloud
+      syncthing.enable = true;        # Enables Syncthing Sync utility (localhost:8384)
     
     };
     

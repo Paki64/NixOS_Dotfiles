@@ -13,6 +13,7 @@
       ./crafty.nix        # Minecraft Server Manager
       ./deluge.nix        # Deluge Downloader
       ./homepage.nix      # Homepage Dashboard
+      ./nextcloud.nix     # Nextcloud
       ./syncthing.nix     # Syncthing Sync Manager
     ];
 }
