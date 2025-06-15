@@ -7,6 +7,12 @@
   };
 
   config = lib.mkIf config.modules.services.deluge.enable {
+    
+    fileSystems."/var/lib/deluge/.config/deluge" = {
+      device = "/srv/nas/apps/deluge/config";
+      options = [ "bind" ];
+    };
+    
     services.deluge = {
       enable = true;
       openFirewall = true;

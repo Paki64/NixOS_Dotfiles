@@ -7,6 +7,12 @@
   };
 
   config = lib.mkIf config.modules.services.managers.radarr.enable {
+
+    fileSystems."/var/lib/radarr" = {
+      device = "/srv/nas/apps/radarr/config";
+      options = [ "bind" ];
+    };
+
     services.radarr = {
       enable = true;
       openFirewall = true;

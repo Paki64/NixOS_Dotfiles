@@ -79,7 +79,7 @@
   services.xrdp.defaultWindowManager = "startplasma-x11";
   services.xrdp.openFirewall = true;
   */
-/
+
   # XDG Portal Support
   xdg.portal = {
     enable = true;
@@ -114,7 +114,7 @@
         azuracast.enable = true;      # Enables AzuraCast web radio
         calibre.enable = true;        # TODO Enables Calibre book server
         komga.enable = true;          # TODO Enables Komga comics/manga server
-        navidrome.enable = true;      # Enables Navidrome music server
+        navidrome.enable = true;      # Enables Navidrome music server 
         jellyfin.enable = true;       # Enables Jellyfin media server (Server-localhost:8096, Jellyseerr-localhost:5055)
       };
 
@@ -136,7 +136,7 @@
         server.enable = true;         # Enables Server mount
       };
     
-      crafty.enable = true;           # Enables Minecraft Server Manager
+      crafty.enable = true;           # Enables Minecraft Server Manager (https://localhost:8443)
       deluge.enable = true;           # Enables Deluge instance (localhost:8112)
       homepage.enable = true;         # TODO Enables Homepage dashboard
       syncthing.enable = true;        # Enable Syncthing Sync utility (localhost:8384)

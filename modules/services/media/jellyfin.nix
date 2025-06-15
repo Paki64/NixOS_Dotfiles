@@ -7,7 +7,17 @@
   };
 
   config = lib.mkIf config.modules.services.media.jellyfin.enable {
-    
+
+    fileSystems."/var/lib/jellyfin" = {
+      device = "/srv/nas/apps/jellyfin";
+      options = [ "bind" ];
+    };
+
+    fileSystems."/var/lib/jellyseerr" = {
+      device = "/srv/nas/apps/jellyseerr";
+      options = [ "bind" ];
+    };
+
     services.jellyfin = {
       enable = true;
       openFirewall = true;
