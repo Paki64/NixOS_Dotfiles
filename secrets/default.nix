@@ -11,6 +11,9 @@
 
     # From secrets.yaml
     "hosts/server/users/paki/password" = {};
+    "modules/services/nextcloud/password" = {
+      path = "/etc/nextcloud-admin-pass";
+    };
 
     # Dotfiles 
     "dots/ddclient" = {

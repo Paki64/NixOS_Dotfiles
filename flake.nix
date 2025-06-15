@@ -34,7 +34,7 @@
       # Configurazioni dei Sistemi
       nixosConfigurations = {
 
-        Paki-Server = lib.nixosSystem {
+        server = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ 
             ./hosts/server/configuration.nix

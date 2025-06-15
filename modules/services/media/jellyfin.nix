@@ -13,8 +13,8 @@
       options = [ "bind" ];
     };
 
-    fileSystems."/var/lib/jellyseerr" = {
-      device = "/srv/nas/apps/jellyseerr";
+    fileSystems."/var/lib/jellyseerr/config" = {
+      device = "/srv/nas/apps/jellyseerr/config";
       options = [ "bind" ];
     };
 

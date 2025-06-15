@@ -1,12 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
  
   # NixOS Network settings
+  environment.etc."hosts".text = lib.mkForce ''
+    127.0.0.1 server.pakisrv.com server localhost
+    ::1       localhost
+  '';
+  
   networking = {
 
     networkmanager.enable = true; # Enable networking
-    hostName = "Paki-Server";   # Define your hostname.
+    hostName = "server";
+    domain = "pakisrv.com";
     # wireless.enable = true;     # Enables wireless support via wpa_supplicant.
 
     interfaces.enp2s0 = {
