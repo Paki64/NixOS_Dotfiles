@@ -9,6 +9,7 @@
       ./jellyfin.nix    # Jellyfin Media Server
       ./komga.nix       # Komga Comics Server
       ./navidrome.nix   # Navidrome Music Server
+      ./nextcloud.nix   # Nextcloud
     ];
 
   options = {
@@ -66,6 +67,7 @@
         jellyfin.enable = lib.mkForce false;
         komga.enable = lib.mkForce false;
         navidrome.enable = lib.mkForce false;
+        nextcloud.enable = lib.mkForce false;
       };
     })
 

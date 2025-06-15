@@ -127,6 +127,7 @@
           calibre.enable = true;      # TODO books.pakisrv.com
           komga.enable = true;        # TODO comics.pakisrv.com
           navidrome.enable = true;    # music.pakisrv.com
+          nextcloud.enable = true;    # cloud.pakisrv.com
           jellyfin.enable = true;     # tv.pakisrv.com & request.tv.pakisrv.com
         };
       };

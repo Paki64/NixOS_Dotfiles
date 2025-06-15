@@ -10,25 +10,28 @@
     
       services.nextcloud = {
         enable = true;
-        hostName = "localhost"; 
+        hostName = "server"; 
         package = pkgs.nextcloud31;
-        https = false;        
         config.adminpassFile = "/etc/nextcloud-admin-pass";
-        config.dbtype = "sqlite";          
+        config.dbtype = "sqlite";     
+        settings.trusted_domains = [ "server" "192.168.1.101" ]; 
+        settings.enabledPreviewProviders = [
+          "OC\\Preview\\BMP"
+          "OC\\Preview\\GIF"
+          "OC\\Preview\\JPEG"
+          "OC\\Preview\\Krita"
+          "OC\\Preview\\MarkDown"
+          "OC\\Preview\\MP3"
+          "OC\\Preview\\OpenDocument"
+          "OC\\Preview\\PNG"
+          "OC\\Preview\\TXT"
+          "OC\\Preview\\XBitmap"
+          "OC\\Preview\\HEIC"
+        ];
       };
 
-      # Forziamo Nginx ad ascoltare solo su localhost:9000
-      services.nginx = {
-        enable = true;
-        virtualHosts."localhost" = {
-          listen = [{
-            addr = "127.0.0.1";
-            port = 9000;
-            ssl = false;
-          }];
-        };
-      };
-    
+      services.nginx.virtualHosts."server".listen = [ { addr = "0.0.0.0"; port = 9880; } ];
+  
     };
 
   }
