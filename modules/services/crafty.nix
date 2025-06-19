@@ -12,6 +12,9 @@
     networking.firewall.allowedTCPPortRanges = [
       {from = 25600; to = 25700;} 
     ];
+    networking.firewall.allowedUDPPorts = [
+      19132
+    ];
 
     # Crafty manager
     virtualisation.oci-containers.containers."crafty" = {
