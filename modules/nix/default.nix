@@ -8,7 +8,8 @@
         "nix-command"
         "flakes"
       ];
-      plugin-files = "${pkgs.nix-plugins}/lib/nix/plugins";
+      # plugin-files = "${pkgs.nix-plugins}/lib/nix/plugins";
+        plugin-files = null;
       trusted-users = [ "root" "@wheel" ];
     };
     # Garbage Collector

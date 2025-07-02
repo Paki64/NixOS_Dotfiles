@@ -135,7 +135,7 @@
       rclone = {          
         enable = true;                # Enables Rclone
         raidrive.enable = true;       # Workaround for Raidrive mounts (Distrobox)
-        server.enable = true;         # Enables Server mount
+        server.enable = false;        # Enables Server mount
       };
     
       crafty.enable = true;           # Enables Minecraft Server Manager (https://localhost:8443)
